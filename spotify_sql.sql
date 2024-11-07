@@ -1,6 +1,4 @@
 -- CREATE THE TABLE.
-
-
 CREATE TABLE Spotify (
     Artist VARCHAR(255),
     Track VARCHAR(255),
@@ -40,7 +38,7 @@ SELECT COUNT(DISTINCT Artist) FROM Spotify
 SELECT COUNT(DISTINCT Album) FROM Spotify
 
 
--- TYPES OF ALBUM
+-- TYPES OF ALBUM.
 SELECT DISTINCT Album_type FROM SPOTIFY
 
 
@@ -102,6 +100,7 @@ SELECT * FROM (SELECT Track,
     WHERE Streamed_on_Spotify > Streamed_on_youtube 
     AND Streamed_on_Youtube <> 0
 
+    
 -- FIND THE SUM OF LIKES FOR TRACKS BASED ON NUMBER OF VIEWS.
 SELECT Track, Views, Likes, 
 SUM(Likes) OVER (ORDER BY Views DESC) AS 
